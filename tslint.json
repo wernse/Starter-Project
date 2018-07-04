@@ -1,130 +1,167 @@
 {
-  "rulesDirectory": [
-    "node_modules/codelyzer"
-  ],
-  "rules": {
-    "arrow-return-shorthand": true,
-    "callable-types": true,
-    "class-name": true,
-    "comment-format": [
-      true,
-      "check-space"
+    "extends": [
+        "tslint:recommended",
+        "tslint-eslint-rules"
     ],
-    "curly": true,
-    "deprecation": {
-      "severity": "warn"
+    "rulesDirectory": [
+        "node_modules/codelyzer"
+    ],
+    "rules": {
+        // Custom
+        "trailing-comma": false,
+        "interface-name": [false, "always-prefix"],
+        "max-classes-per-file": [false],
+        "prefer-const": false, // want true
+        "import-spacing": false,
+        "no-angle-bracket-type-assertion": false,
+        "ban-types": false,
+        "ban": [
+            true,
+            "fdescribe",
+            "fit",
+            {
+                "name": ["_", "camelCase"],
+                "message": "Use lodash-es/camelCase"
+            },
+            {
+                "name": ["_", "capitalize"],
+                "message": "Use lodash-es/capitalize"
+            },
+            {
+                "name": ["_", "clone"],
+                "message": "Use lodash-es/clone"
+            },
+            {
+                "name": ["_", "cloneDeep"],
+                "message": "Use lodash-es/cloneDeep"
+            },
+            {
+                "name": ["_", "compact"],
+                "message": "Use lodash-es/compact"
+            },
+            {
+                "name": ["_", "defaultDeep"],
+                "message": "Use lodash-es/defaultDeep"
+            },
+            {
+                "name": ["_", "findLast"],
+                "message": "Use lodash-es/findLast"
+            },
+            {
+                "name": ["_", "flatten"],
+                "message": "Use lodash-es/flatten"
+            },
+            {
+                "name": ["_", "flattenDeep"],
+                "message": "Use lodash-es/flattenDeep"
+            },
+            {
+                "name": ["_", "lowerCase"],
+                "message": "Use lodash-es/lowerCase"
+            },
+            {
+                "name": ["_", "maxBy"],
+                "message": "Use lodash-es/maxBy"
+            },
+            {
+                "name": ["_", "orderBy"],
+                "message": "Use lodash-es/orderBy"
+            },
+            {
+                "name": ["_", "sortBy"],
+                "message": "Use lodash-es/sortBy"
+            },
+            {
+                "name": ["_", "startCase"],
+                "message": "Use lodash-es/startCase"
+            },
+            {
+                "name": ["_", "toLower"],
+                "message": "Use lodash-es/toLower"
+            },
+            {
+                "name": ["_", "toUpper"],
+                "message": "Use lodash-es/toUpper"
+            },
+            {
+                "name": ["_", "union"],
+                "message": "Use lodash-es/union"
+            },
+            {
+                "name": ["_", "uniqBy"],
+                "message": "Use lodash-es/uniqBy"
+            },
+            {
+                "name": ["_", "upperFirst"],
+                "message": "Use lodash-es/upperFirst"
+            },
+            {
+                "name": ["_", "words"],
+                "message": "Use lodash-es/words"
+            }
+        ],
+        // Eslint
+        "sort-imports": [false],
+        "no-irregular-whitespace": true,
+        "no-unexpected-multiline": true,
+        "curly": true,
+        "no-magic-numbers": false, // want true
+        "object-curly-spacing": true,
+        "newline-per-chained-call": false,
+        // Angular-specific
+        "component-class-suffix": true,
+        "component-selector": [true, "element", "kebab-case"],
+        "directive-class-suffix": true,
+        "directive-selector": [true, "attribute", "camelCase"],
+        "import-destructuring-spacing": true,
+        "no-attribute-parameter-decorator": true,
+        "no-forward-ref": true,
+        "no-input-rename": true,
+        "no-output-rename": true,
+        "pipe-naming": [true, "camelCase"],
+        "no-unused-variable": false, // want true
+        "use-host-property-decorator": true,
+        "use-input-property-decorator": true,
+        "use-life-cycle-interface": true,
+        "use-output-property-decorator": true,
+        "use-pipe-transform-interface": true,
+        // General
+        "no-console": [true,
+            "trace"
+        ],
+        "max-line-length": [
+            false
+        ],
+        "no-string-literal": false,
+        "no-use-before-declare": false, // want true
+        "object-literal-sort-keys": false, // want true
+        "object-literal-shorthand": false, // want true
+        "quotemark": [
+            true,
+            "single",
+            "avoid-escape"
+        ],
+        "variable-name": [
+            true,
+            "allow-leading-underscore",
+            "allow-pascal-case",
+            "ban-keywords",
+            "check-format"
+        ],
+        "no-consecutive-blank-lines": true,
+        "newline-before-return": false,
+        "eofline": true,
+        "no-trailing-whitespace": true,
+        "indent": [true, "spaces", 4],
+        "no-duplicate-imports": false,
+        "ordered-imports": [false],
+        "member-ordering": [false],
+        "member-access": false,
+        "one-line": [true, "check-catch", "check-finally", "check-else", "check-open-brace", "check-whitespace"]
     },
-    "eofline": true,
-    "forin": true,
-    "import-blacklist": [
-      true,
-      "rxjs/Rx"
-    ],
-    "import-spacing": true,
-    "indent": [
-      true,
-      "spaces"
-    ],
-    "interface-over-type-literal": true,
-    "label-position": true,
-    "max-line-length": [
-      true,
-      140
-    ],
-    "member-access": false,
-    "member-ordering": [
-      true,
-      {
-        "order": [
-          "static-field",
-          "instance-field",
-          "static-method",
-          "instance-method"
-        ]
-      }
-    ],
-    "no-arg": true,
-    "no-bitwise": true,
-    "no-console": [
-      true,
-      "debug",
-      "info",
-      "time",
-      "timeEnd",
-      "trace"
-    ],
-    "no-construct": true,
-    "no-debugger": true,
-    "no-duplicate-super": true,
-    "no-empty": false,
-    "no-empty-interface": true,
-    "no-eval": true,
-    "no-inferrable-types": [
-      true,
-      "ignore-params"
-    ],
-    "no-misused-new": true,
-    "no-non-null-assertion": true,
-    "no-shadowed-variable": true,
-    "no-string-literal": false,
-    "no-string-throw": true,
-    "no-switch-case-fall-through": true,
-    "no-trailing-whitespace": true,
-    "no-unnecessary-initializer": true,
-    "no-unused-expression": true,
-    "no-use-before-declare": true,
-    "no-var-keyword": true,
-    "object-literal-sort-keys": false,
-    "one-line": [
-      true,
-      "check-open-brace",
-      "check-catch",
-      "check-else",
-      "check-whitespace"
-    ],
-    "prefer-const": true,
-    "quotemark": [
-      true,
-      "single"
-    ],
-    "radix": true,
-    "semicolon": [
-      true,
-      "always"
-    ],
-    "triple-equals": [
-      true,
-      "allow-null-check"
-    ],
-    "typedef-whitespace": [
-      true,
-      {
-        "call-signature": "nospace",
-        "index-signature": "nospace",
-        "parameter": "nospace",
-        "property-declaration": "nospace",
-        "variable-declaration": "nospace"
-      }
-    ],
-    "unified-signatures": true,
-    "variable-name": false,
-    "whitespace": [
-      true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-separator",
-      "check-type"
-    ],
-    "no-output-on-prefix": true,
-    "use-input-property-decorator": true,
-    "use-output-property-decorator": true,
-    "use-host-property-decorator": true,
-    "no-input-rename": true,
-    "no-output-rename": true,
-    "use-life-cycle-interface": true,
-    "use-pipe-transform-interface": true,
-    "component-class-suffix": true,
-    "directive-class-suffix": true
-  }
+    "excludes": ["node_modules", "aot", "dist", "backstop", "server", "tools", "srcJs"],
+    "noEmitOnError": true,
+    "sourceMap": true,
+    "inlineSources": true,
+    "defaultSeverity": "error"
 }

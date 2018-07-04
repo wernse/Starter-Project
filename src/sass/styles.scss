@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/theming';
+@import "~src/sass/variables";
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config( $font-family: 'Open sans, Arial, sans-serif');
+@include mat-core($custom-typography);
+$dark-primary-text: rgba(black, 1);
+$test-yellow: ( 50: #fffde7, 100: #fff9c4, 200: #fff59d, 300: #fff176, 400: #ffee58, 500: #FFE344, 600: #fdd835, 700: #fbc02d, 800: #f9a825, 900: #f57f17, A100: #ffff8d, A200: #FFE344, A400: #ffea00, A700: #ffd600, contrast: ( 50: $dark-primary-text, 100: $dark-primary-text, 200: $dark-primary-text, 300: $dark-primary-text, 400: $dark-primary-text, 500: $dark-primary-text, 600: $dark-primary-text, 700: $dark-primary-text, 800: $dark-primary-text, 900: $dark-primary-text, A100: $dark-primary-text, A200: $dark-primary-text, A400: $dark-primary-text, A700: $dark-primary-text, ));
+$test-grey: ( 50: #e0e0e0, 100: #b3b3b3, 200: #808080, 300: #4d4d4d, 400: #262626, 500: black, 600: black, 700: black, 800: black, 900: black, A100: #a6a6a6, A200: #8c8c8c, A400: #737373, A700: #666666, contrast: ( 50: black, 100: black, 200: black, 300: white, 400: white, 500: white, 600: white, 700: white, 800: white, 900: white, A100: black, A200: black, A400: white, A700: white, ));
+$test-app-primary: mat-palette($test-grey, A200, A100, A400);
+$test-app-accent: mat-palette($test-yellow, A200, A100, A400);
+// The warn palette is optional (defaults to red).
+$test-app-warn: mat-palette($mat-red);
+// Create the theme object (a Sass map containing all of the palettes).
+$test-app-theme: mat-light-theme($test-app-primary, $test-app-accent, $test-app-warn);
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($test-app-theme);
+// Not using font-awesome at the moment
+// $fa-font-path: "../../node_modules/font-awesome/fonts";
+// @import "../../node_modules/font-awesome/scss/font-awesome.scss";
